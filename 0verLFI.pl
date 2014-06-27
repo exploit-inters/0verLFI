@@ -20,7 +20,7 @@ use Image::ExifTool;
 print q(
  
 +-----------------------------------+
-   0verLFI v0.1 coded by The X-C3LL  
+   0verLFI v0.2 coded by The X-C3LL  
  
     Http://0verl0ad.blogspot.com  
 +-----------------------------------+
@@ -36,7 +36,8 @@ print "[+]Shell = $file \n";
  
 open (HANDLE, $file);
 @array = <HANDLE>;
-my $string = join("\n", @array);
+my $string = join("", @array);
+$string =~ s/\n//g;
  
  
 my $tool = Image::ExifTool->new();
